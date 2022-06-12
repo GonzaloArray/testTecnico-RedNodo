@@ -1,0 +1,284 @@
+:root{
+    --white: #ffffff;
+    --black: #000000;
+    --primary: #ee7325;
+    --secundary: #431123;
+
+    --font-tittle: 'Quicksand', sans-serif;
+    --font-par: 'Open Sans', sans-serif;
+}
+
+html{
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+
+    background-image: url(../img/fondoNodo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+}
+a{
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    text-decoration: none;
+}
+p{
+    margin: 0;
+    padding: 0;
+}
+button{
+    border: none;
+    color: var(--white);
+}
+
+/* Clases */
+/* Header */
+.headerLogo img{
+    width: 9rem;
+    border-radius: 1rem;
+}
+
+/* Main */
+.infoMain{
+    margin: 0 2rem;
+}
+.infoMain h1{
+    letter-spacing: .3rem;
+    font: 300 140% var(--font-tittle);
+    position: relative;
+    margin-bottom: 2.3rem;
+    text-transform: uppercase;
+
+    /* Flex */
+    display: flex;
+    justify-content: center;
+}
+.infoMain h1::after{
+    background-color: var(--primary);
+    border-radius: 20%;
+    content: '';
+    height: 3px;
+    position: absolute;
+    top: 2.5rem;
+    width: 34%;
+}
+/* Parrafos */
+.infoParrafo {
+    font: 500 90% var(--font-tittle);
+    margin-bottom: 1.5rem;
+}
+.infoParrafo p{
+    margin-bottom: .7rem;
+}
+
+/* Boton del Main */
+.btnSubmit {
+    background-color: var(--primary);
+    color: var(--white);
+    display: inline-block;
+    font-family: var(--font-tittle);
+    font-weight: 700;
+    padding: .9rem 1.2rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 1s;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.btnSubmit:hover {
+    color: var(--primary);
+}
+
+.btnSubmit::after {
+    content: "";
+    background: var(--white);
+    border-top: 4px solid var(--primary);
+    position: absolute;
+    z-index: -1;
+    padding: .9rem 1.2rem;
+    display: block;
+    top: 0;
+    left: -60px;
+    height: 100%;
+    transform: skewX(35deg);
+    transition: all 1s;
+    width: 0;
+}
+
+.btnSubmit:hover::after {
+    width: 150%;
+}
+
+/* Footer */
+.infoFooter h2{
+    font: bold 80% var(--font-par);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+.infoRedes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.infoRedes a{
+    border: 1px solid var(--black);
+    border-radius: .3rem;
+    color: var(--black);
+    font-size: 1.5rem;
+    padding: 0.16rem .2rem .16rem .2rem;
+    transition: .5s;
+    margin: 0 .5rem;
+}
+.infoRedes a:hover{
+    border: none;
+    background-color: var(--primary);
+    color: var(--white);
+    transform: translateY(-5px);
+    transition: .5s;
+}
+
+/* Cambios en el icono de Facebook */
+.infoRedes a:nth-child(2){
+    padding: .334rem .2rem 0 .6rem;
+}
+
+/* Design Modal */
+.positionDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    inset: 0;
+}
+.designModal{
+    border: 5px solid var(--white);
+    background-color: var(--primary);
+
+    /* Flex */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+
+    height: 210px;
+    width: 80%;
+
+    z-index: 1;
+}
+.changesPar{
+    color: var(--white);
+    font: 500 113% var(--font-tittle);
+}
+.btnCancel{
+    background-color: var(--white);
+    color: var(--primary);
+    padding: .9rem 1.5rem;
+    font: 700 103% var(--font-tittle);
+}
+.callChange{
+    color: var(--white);
+    display: block;
+    margin-top: .9rem;
+}
+.callChange:hover{
+    color: black;
+}
+@media (min-width: 570px) {
+    /* Design Modal */
+    .designModal{
+        height: 320px;
+        width: 62%;
+    }
+}
+
+/* Media queries */
+@media (min-width: 768px) {
+    .infoMain h1{
+        letter-spacing: .4rem;
+        font: 500 215% var(--font-tittle);
+        margin-bottom: 3.2rem;
+    }
+    .infoMain h1::after{
+        top: 3.2rem;
+    }
+    /* Parrafo */
+    .infoParrafo{
+        font: 600 110% var(--font-tittle);
+        margin-bottom: 2.3rem;
+    }
+    .btnSubmit{
+        padding: 1.1rem 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    /* Design Modal */
+    .designModal{
+        height: 320px;
+        width: 59%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .infoMain h1{
+        font: 500 270% var(--font-tittle);
+        margin-bottom: 3.5rem;
+    }
+    .infoMain h1::after{
+        top: 3.9rem;
+    }
+    /* Parrafo */
+    .infoParrafo {
+        margin-bottom: 2.7rem;
+        font: 600 100% var(--font-tittle);
+    }
+    /* Design Modal */
+    .designModal{
+        height: 320px;
+        width: 40%;
+    }
+}
+
+@media (min-width: 1400px) {
+    /* Modificaciones en el tamaño del logo */
+    .headerLogo img{
+        width: 10rem;
+    }
+    .infoMain h1{
+        letter-spacing: .4rem;
+        font: 500 330% var(--font-tittle);
+        margin-bottom: 4rem;
+    }
+    .infoMain h1::after{
+        top: 5rem;
+    }
+    .infoParrafo {
+        margin-bottom: 2.7rem;
+        font: 500 113% var(--font-tittle);
+    }
+    .btnSubmit{
+        padding: 1.6rem 2rem;
+        font-size: 1.5rem;
+    }
+    /* Design Modal */
+    .designModal{
+        height: 320px;
+        width: 30%;
+    }
+}
